@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>注册</title>
+
+
+    <link type="text/css" rel="stylesheet" href="css/regist2.css" />
+    <link type="text/css" rel="stylesheet" href="css/regist2_pop.css" />
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+</head>
+
+<body>
+<div class="bg">
+    <header class="head">
+        <h1>注册</h1>
+    </header>
+
+    <section class="ui-reg">
+        <ul class="ui-tel">
+            <li>
+                <lable for="tel"></lable>
+                <input id="tel" type="text" name="tel" placeholder="请输入手机号"/>
+            </li>
+        </ul>
+        <ul class="ui-code">
+            <li>
+                <lable for="code"></lable>
+                <input id="code" type="text" name="code-input" placeholder="请输入验证码"/>
+                <input class="code-button" type="button" name="code-button" value="获取验证码"> 
+            </li>
+        </ul>
+        <ul class="ui-password">
+            <li>
+                <lable for="pasw"></lable>
+                <input id="pasw" type="password" name="password" placeholder="请输入密码"/>
+            </li>
+        </ul>
+        <div class="sure-text">
+            <p>没收到短信？请检查是否被手机安全软件屏蔽，再次点击“获取验证码”</p>
+        </div>
+        <div class="reg-btn">
+            <input type="button" value="确定"/>
+        </div>
+    </section>
+    </div>
+
+    <div id="pop">
+        <div id="pop-text"></div>
+        <div>
+            <input id="pop-btn" type="button" value="确定"/>
+        </div>    
+    </div>
+
+    <div id="hidebg"></div>
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var re_null=/\s/,
+        re_phone = /^[1][358][0-9]{9}$/,
+        re_code=/^\d{6}$/,
+        re_psw = /^\w{6,20}$/;
+
+        /*var dom = document.createElement('div');
+        dom.innerHTML = '<div id="pop"><div><div id="pop-text"></div></div><div><input id="pop-btn" type="button" value="确定"/></div></div>';
+        document.body.appendChild(dom);
+
+        var hidebg= document.createElement('div');
+        dom.innerHTML = '<div id="hidebg"></div>';
+        document.body.appendChild(hidebg);*/
+        $("#reg-button").click(function(){
+            var tel_in = $.trim($(".tel-input").val());
+            yzm_in = $.trim($(".code-input").val());
+            psw_in = $.trim($(".password-input").val());
+            //alert(psw_in);
+            if(tel_in==""||re_null.test(tel_in) || !re_phone.test(tel_in)){
+                $("#pop-text").text("请输入正确的手机号码");
+           
+            }else if(yzm_in=="" ||re_null.test(yzm_in)|| !re_code.test(yzm_in)){ 
+                
+                $("#pop-text").text("请输入正确的验证码"); 
+            }else if(psw_in==""||re_null.test(psw_in)||!re_psw.test(psw_in)){
+                $("#pop-text").text("请输入正确的密码");
+         
+            }else{
+                $("#pop-text").text("注册成功！");
+            }
+
+            $("#pop").css("display","block");
+            // $("hidebg").css({"display":"block","height":"document.body.clientHeight+'px'"})
+            var hideobj=document.getElementById("hidebg");
+            hideobj.style.display="block";  //显示隐藏层
+            hideobj.style.height=document.body.clientHeight+"px";  //设置隐藏层的高度为当前页面高度*/
+        });
+
+        $("#pop-btn").click(function(){
+            document.getElementById("hidebg").style.display="none";  //显示隐藏层
+            document.getElementById("pop").style.display="none";
+        });
+});  
+</script>
+
+</body>
+</html>
