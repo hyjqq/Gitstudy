@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>表头表尾固定，表身滚动</title>
+    <meta charset="utf-8" />
+    <style>
+        *{margin:0;padding:0;}
+        .container{border: 1px #ccc solid;width: 90%;margin: 100px auto;}
+        .form-table{width: 100%;margin: 0 auto;text-align: center;table-layout: fixed;}
+        .form-table th{border-right: 1px #ccc solid;border-bottom: 1px #ccc solid;background: #F3F3F3;}
+        .form-table td{border-bottom: 1px #ccc solid;border-right: 1px #ccc solid;}
+        .fixed-tfoot tr td{background: #F3F3F3;border-bottom: none;}
+        /*.fixed-thead,.fixed-tfoot{padding-right:17px;}*/
+        .fixed-thead tr th,.fixed-tfoot tr td{height: 50px;font-size: 16px;text-align: center;}
+        .scroll-box{width: 100%;height: 300px;overflow: auto;overflow-x:hidden;}
+        .scroll-box tr{width: 100%;height: 40px;line-height: 20px;}
+        .scroll-box tr td{padding: 5px;}
+        .scroll-box tr:nth-child(odd) td{background-color: #ECE9D8;}
+        .tip{margin: 0 auto;text-align: center;color: red;line-height: 150%;font-size: 14px;}
+    </style>
+</head>
+<body>
+<!--container-->
+<div class="container">
+    <!--【fixed-thead表头】-->
+    <table class="form-table fixed-thead" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+    </table>
+    <!--【fixed-thead表头】-->
+    <!--【表身】-->
+    <div class="scroll-box">
+        <table class="form-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+           <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <!-- <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>张三张三张三张三</td>
+                <td>男男男男男</td>
+                <td>181818</td>
+            </tr>-->
+        </table>
+    </div>
+    <!--【表身】-->
+    <!--【fixed-tfoot表尾】-->
+    <table class="form-table fixed-tfoot" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>序号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+        </tr>
+    </table>
+    <!--【fixed-tfoot表尾】-->
+</div>
+<!--container-->
+<p class="tip">
+    实现：table表格，表头、表尾固定；表身内容随着内容增加，出现滚动条，滚动下拉滚动条显示内容；<br />
+    这个demo是通过3个table来实现。表头，表尾的table实现固定不动。中间的table外面，嵌套一层div。设置div的高度并添加overflow:auto
+    来实现滚动条<br />
+</p>
+</body>
+</html>
